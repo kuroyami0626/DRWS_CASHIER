@@ -1,3 +1,10 @@
+<?php
+include("header.php");
+?>
+<body>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,15 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darasa Rural Waterworks</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-    <link href="assets/vendor/apexcharts/apexcharts.css" rel="stylesheet">
 
     <style>
         body {
@@ -123,7 +121,9 @@
         <div class="container secondary-buttons">
             <button class="btn btn-primary" onclick="window.location.href='water-rate.html'">WATER RATE</button>
             <button class="btn btn-primary" onclick="window.location.href='summary-nrdm.html'">SUMMARY NRDM</button>
-            <button class="btn btn-primary" onclick="window.location.href='consumer_account.php'">STATEMENT OF ACCOUNT </button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#consumerModal">
+                                                                                                    STATEMENT OF ACCOUNT
+                                                                                                </button>
             <button class="btn btn-primary" onclick="window.location.href='disconnected.html'">DISCONNECTED</button>
             <button class="btn btn-primary" onclick="window.location.href='reconnected.html'">RECONNECTED</button>
             <button class="btn btn-primary" onclick="window.location.href='meter-replacement.html'">METER REPLACEMENT</button>
@@ -355,14 +355,50 @@
             </div>
         </div>
     </div>
+
+
+
+    <!-- modal for consumer account  -->
+     <!-- Modal -->
+<div class="modal fade" id="consumerModal" tabindex="-1" aria-labelledby="consumerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="consumerModalLabel">Enter Consumer Name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="consumerName" class="form-control" placeholder="Enter consumer name">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="redirectToConsumer()">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dito end -->
+
+<script>
+function redirectToConsumer() {
+        let consumerName = document.getElementById('consumerName').value.trim();
+        if (consumerName === "") {
+            alert("Please enter the consumer name.");
+        } else {
+            window.location.href = "consumer_account.php?name=" + encodeURIComponent(consumerName);
+        }
+    }
+</script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Popper.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <link href="assets/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+
+
 </body>
 
 </html>

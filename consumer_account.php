@@ -186,6 +186,9 @@ if (mysqli_num_rows($result) > 0) {
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Consumer Account Details</h5>
+                    <div>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addDataModal"><i class="bi bi-plus"></i> Add Data</button>
+                    </div>
                     <table class="table table-bordered datatable" id="myTable">
                         <thead>
                             <tr>

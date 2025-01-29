@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DWell Pet Monitoring System</title>
+  <title>DRWSA</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -24,6 +24,17 @@
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- js -->
+<script src="js\bootstrap.min.js"></script>
+<script src="js\click-scroll.js"></script>
+<script src="js\custom.js"></script>
+<script src="js\jquery.magnific-popup.min.js"></script>
+<script src="js\jquery.min.js"></script>
+<script src="js\jquery.sticky.js"></script>
+<script src="js\magnific-popup-options.js"></script>
+
 
 </head>
 <script src="//code.tidio.co/qql8mc6b8vvrmxbqws18ckf9a2yvma7m.js" async></script>
