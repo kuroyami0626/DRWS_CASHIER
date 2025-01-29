@@ -337,62 +337,6 @@
                                 <label for="reader" class="form-label">READER:</label>
                                 <input type="text" id="reader" class="form-input form-control" placeholder="Enter reader's name">
                             </div>
-<?php
-// Connect to the database
-$conn = mysqli_connect('localhost', 'root', '', 'dwelldb');
-
-// Check connection
-if (!$conn) {
-    die('Connection failed: ' . mysqli_connect_error());
-}
-
-// Get the updated values from the FormData object
-$recordId = $_POST['record_id'] ?? '';
-$num = $_POST['num'] ?? '';
-$name = $_POST['name'] ?? '';
-$area = $_POST['area'] ?? '';
-$blk = $_POST['blk'] ?? '';
-$presentReading = $_POST['present_reading'] ?? 0;
-$previousReading = $_POST['previous_reading'] ?? 0;
-$consumed = $_POST['consumed'] ?? 0;
-$remarks = $_POST['remarks'] ?? '';
-$totalCor = $_POST['total_cor'] ?? 0;
-$amount = $_POST['amount'] ?? 0;
-$scDisc = $_POST['sc_disc'] ?? 0;
-$year = $_POST['year'] ?? '';
-$discPerc = $_POST['disc_perc'] ?? 0;
-$month = $_POST['month'] ?? '';
-$category = $_POST['category'] ?? '';
-$duedate = $_POST['duedate'] ?? '';
-$discDate = $_POST['disc_date'] ?? '';
-$billPeriod = $_POST['bill_period'] ?? '';
-$others = $_POST['others'] ?? '';
-$reader = $_POST['reader'] ?? '';
-
-// Update the record in the database
-$sql = "UPDATE tbl_reading SET 
-        num = '$num',
-        name = '$name', 
-        area = '$area', 
-        blk = '$blk', 
-        present_reading = '$presentReading', 
-        previous_reading = '$previousReading', 
-        consumed = '$consumed', 
-        remarks = '$remarks', 
-        total_cor = '$totalCor', 
-        amount = '$amount', 
-        sc_disc = '$scDisc', 
-        year = '$year', 
-        disc_perc = '$discPerc', 
-        month = '$month', 
-        category = '$category', 
-        duedate = '$duedate', 
-        disc_date = '$discDate', 
-        bill_period = '$billPeriod', 
-        others = '$others', 
-        reader = '$reader' 
-        WHERE id = '$recordId'";
-?>
                             <!-- Buttons -->
                             <div class="form-group mt-4">
                               <button id="update" class="btn btn-success">UPDATE</button>
@@ -411,75 +355,6 @@ $sql = "UPDATE tbl_reading SET
             </div>
         </div>
     </div>
-<script>
-    // Get the update button
-const updateButton = document.getElementById('update');
-
-// Add an event listener to the update button
-updateButton.addEventListener('click', function() {
-    // Get the updated values from the form fields
-    const recordId = document.getElementById('record_id').value;
-    const name = document.getElementById('name').value;
-    const area = document.getElementById('area').value;
-    const blk = document.getElementById('blk').value;
-    const presentReading = document.getElementById('presentReading').value;
-    const previousReading = document.getElementById('previousReading').value;
-    const consumed = document.getElementById('consumed').value;
-    const remarks = document.getElementById('remarks').value;
-    const totalCor = document.getElementById('totalCorrection').value;
-    const amount = document.getElementById('amount').value;
-    const scDisc = document.getElementById('scDiscount').value;
-    const year = document.getElementById('year').value;
-    const discPerc = document.getElementById('percentDiscount').value;
-    const month = document.getElementById('month').value;
-    const category = document.getElementById('category').value;
-    const duedate = document.getElementById('dueDate').value;
-    const discDate = document.getElementById('discDate').value;
-    const billPeriod = document.getElementById('billingPeriod').value;
-    const others = document.getElementById('others').value;
-    const reader = document.getElementById('reader').value;
-
-    // Create a FormData object to store the updated values
-    const formData = new FormData();
-    formData.append('record_id', recordId);
-    formData.append('name', name);
-    formData.append('area', area);
-    formData.append('blk', blk);
-    formData.append('present_reading', presentReading);
-    formData.append('previous_reading', previousReading);
-    formData.append('consumed', consumed);
-    formData.append('remarks', remarks);
-    formData.append('total_cor', totalCor);
-    formData.append('amount', amount);
-    formData.append('sc_disc', scDisc);
-    formData.append('year', year);
-    formData.append('disc_perc', discPerc);
-    formData.append('month', month);
-    formData.append('category', category);
-    formData.append('duedate', duedate);
-    formData.append('disc_date', discDate);
-    formData.append('bill_period', billPeriod);
-    formData.append('others', others);
-    formData.append('reader', reader);
-
-    // Send an AJAX request to update the database
-    fetch('update_reading.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Record updated successfully!');
-        } else {
-            alert('Error updating record!');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
-</script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Popper.js -->
@@ -488,59 +363,6 @@ updateButton.addEventListener('click', function() {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <link href="assets/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-        <script>
-                function printReceipt() {
-                    const data = {
-                        account_number: document.getElementById('account').value,
-                        name: document.getElementById('name').value,
-                        area: document.getElementById('area').value,
-                        category: document.getElementById('category').value,
-                        month_year: document.getElementById('month').value, // Adjust as necessary
-                        period: '', // Define how to get this value
-                        due_date: document.getElementById('dueDate').value,
-                        disconnection_date: '', // Define how to get this value
-                        present_reading: document.getElementById('presentReading').value,
-                        previous_reading: document.getElementById('previousReading').value,
-                        cum_consumed: document.getElementById('consumed').value,
-                        previous_bill: '', // Define how to get this value
-                        senior_discount: document.getElementById('scDiscount').value,
-                        less_x_disc: '', // Define how to get this value
-                        free_of_charge: document.getElementById('freeCharge').value,
-                        total_amount: document.getElementById('amount').value,
-                        penalty: '' // Define how to get this value
-                    };
-
-                    fetch('admin/receipt.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        // Handle the response from receipt.php if needed
-                        console.log(data);
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
-                }
-            </script>
-</body>
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        // Handle the response from receipt.php if needed
-                        console.log(data);
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
-                }
-            </script>
 </body>
 
 </html>
