@@ -1,11 +1,12 @@
 <?php
-    $con = mysqli_connect("localhost","root","","dwelldb");
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$db_name = 'dwelldb';
 
-    //check connection
-    if(mysqli_connect_errno()){
-        echo "Failed to connect to the datbase ".mysqli_connect_error();
-    }
-    else{
-        echo " ";
-    }
+$con = new mysqli($host, $username, $password, $db_name);
+
+if ($con->connect_error) {
+    die("Failed to connect to the database: " . $con->connect_error);
+}
 ?>

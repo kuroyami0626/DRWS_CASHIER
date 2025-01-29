@@ -184,41 +184,41 @@
                     <div class="row">
                         <!-- First Column -->
                             <!-- First Row with two inputs -->
+                             <div class="form-group">
+                                <label for="searchConsumer" class="form-label">SEARCH CONSUMER:</label>
+                                <input type="text" id="searchConsumer" class="form-input form-control" placeholder="Enter consumer name or account number">
+                                <div id="resultsContainer" class="mt-2"></div>
+                            </div>
                             <div class="form-group">
                                 <label for="accountNum" class="form-label">ACCOUNT NO.:</label>
-                                <input type="text" id="account" class="form-input form-control" placeholder="Account number" required>
+                                <input type="text" id="accountNum" class="form-input form-control"  readonly>
                             </div>
 
                             <!-- Second Row with two inputs -->
                             <div class="form-group">
                                 <label for="name" class="form-label">NAME:</label>
-                                <input type="text" id="name" class="form-input form-control" placeholder="Enter consumer name" required>
+                                <input type="text" id="name" class="form-input form-control"  readonly>
                             </div>
+                            
 
                             <!-- Third Row with two inputs -->
                             <div class="row-2">
                                 <div class="form-group">
                                     <label for="area" class="form-label">AREA:</label>
-                                    <input type="text" id="area" class="form-input form-control" placeholder="Enter consumer area" required>
+                                    <input type="text" id="area" class="form-input form-control"  readonly>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="block" class="form-label">BLK/LOT:</label>
-                                    <input type="text" id="block" class="form-input form-control" placeholder="Enter the blk/lot" required>
+                                    <input type="text" id="block" class="form-input form-control"  readonly>
                                 </div>
                             </div>
 
                             <!-- Fourth Row with two inputs -->
-                            <p style="padding-left: 550px; font-weight: bold;">OLD READING</p>
                             <div class="row-2">
                                 <div class="form-group">
                                     <label for="presentReading" class="form-label">PRESENT:</label>
                                     <input type="number" id="presentReading" class="form-input form-control" placeholder="" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="oldReading" class="form-label"><br></label>
-                                    <input type="number" id="oldReading" class="form-input form-control" placeholder="" required>
                                 </div>
                             </div>
 
@@ -226,12 +226,7 @@
                             <div class="row-2">
                                 <div class="form-group">
                                     <label for="previousReading" class="form-label">PREVIOUS:</label>
-                                    <input type="number" id="previousReading" class="form-input form-control" placeholder="" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="check" class="form-label"><br></label>
-                                    <input type="number" id="check" class="form-input form-control" placeholder="" required>
+                                    <input type="number" id="previousReading" class="form-input form-control" placeholder="" required readonly>
                                 </div>
                             </div>
 
@@ -266,8 +261,16 @@
                                     <input type="number" id="scDiscount" class="form-input form-control" placeholder="Enter discount" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="freeCharge" class="form-label">FREE OF CHARGE:</label>
-                                    <input type="text" id="freeCharge" class="form-input form-control" placeholder="Enter free charge" required>
+                                    <label for="year" class="form-label">YEAR:</label>
+                                    <select name="year" id="year" class="form-control" required>
+                                        <option value="">Select Year</option>
+                                        <?php 
+                                            $currentYear = date('Y');
+                                            for ($i = $currentYear; $i >= 1983; $i--) {
+                                                echo '<option value="' . $i . '">' . $i . '</option>';
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
 
@@ -279,19 +282,13 @@
                             <div class="form-group">
                                 <label for="month" class="form-label">MONTH:</label>
                                 <select name="month" id="month" class="form-control">
-                                    <option value=""></option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
+                                    <option value="">Select Month</option>
+                                    <?php 
+                                        $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                                        foreach ($months as $month) {
+                                            echo '<option value="' . $month . '">' . $month . '</option>';
+                                        }
+                                    ?>
                                 </select>
                             </div>
 
@@ -341,7 +338,7 @@
                             <div class="form-group mt-4">
                               <button id="update" class="btn btn-success">UPDATE</button>
                               <button id="compute" class="btn btn-info">COMPUTE</button>
-                              <button id="print" class="btn btn-warning" onclick="printReceipt()">PRINT</button>
+                              <button id="print" class="btn btn-warning">PRINT</button>
                               <button id="scDiscountButton" class="btn btn-success">S.C DISCOUNT</button>
                               <button id="percentDiscountButton" class="btn btn-info">% DISCOUNT</button>
                               <button id="oldMeterReading" class="btn btn-warning">OLD METER READING</button>
@@ -363,6 +360,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <link href="assets/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+
 </body>
 
 </html>
