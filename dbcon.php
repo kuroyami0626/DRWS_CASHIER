@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost","root","","dwell_db");
+    $con = mysqli_connect("localhost","root","","drwsa_cashier_db");
 
     //check connection
     if(mysqli_connect_errno()){

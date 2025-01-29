@@ -2,7 +2,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$db_name = 'dwell_db';
+$db_name = 'drwsa_cashier_db';
 
 $con = new mysqli($host, $username, $password, $db_name);
 

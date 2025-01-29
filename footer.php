@@ -6,7 +6,8 @@
     </div>
     <div class="credits">
       
-    <a href="index.php" ><img src="images/dogwell.png" width="7%" alt=""></a>
+    <img src="./admin/assets/img/NEW-LOGO.png" width="4%" alt="Logo" style="margin-right: 10px;">
+    <span style="font-size: 30px;">DRWSA</span>
     </div>
 </center>
   </footer><!-- End Footer -->

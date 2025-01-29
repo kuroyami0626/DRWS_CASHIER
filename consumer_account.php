@@ -29,7 +29,7 @@ include 'header.php';
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
     <a href="index.php" class="logo d-flex align-items-center me-auto">
-      <img src="./assets/img/NEW-LOGO.png" alt="DRWSA" class="img-fluid me-2">
+      <img src="./admin/assets/img/NEW-LOGO.png" alt="DRWSA" class="img-fluid me-2">
       <span class="logo-text d-none d-lg-block">DRWSA</span>
     </a>
   </div>

@@ -112,7 +112,7 @@
         <!-- Navbar -->
         <div class="container navbar-buttons">
             <button class="btn btn-primary" onclick="window.location.href='summary-of-reading.html'">SUMMARY OF READING</button>
-            <button class="btn btn-primary" onclick="window.location.href='index_account_sa_darasa.php'">ACCOUNT</button>
+            <button class="btn btn-primary" onclick="window.location.href='account.php'">ACCOUNT</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#readingEntryModal">READING</button>
             <button class="btn btn-primary" onclick="window.location.href='members-profile.html'">MEMBER'S PROFILE</button>
             <button class="btn btn-primary" onclick="window.location.href='official-receipt.html'">OFFICIAL RECEIPT</button>
