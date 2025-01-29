@@ -267,21 +267,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="freeCharge" class="form-label">FREE OF CHARGE:</label>
-                                    <select name="year" id="year" class="form-control" required>
-                                        <option value="">Select Year</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2013">2013</option>
-                                    </select>
+                                    <input type="text" id="freeCharge" class="form-input form-control" placeholder="Enter free charge" required>
                                 </div>
                             </div>
 
@@ -502,7 +488,59 @@ updateButton.addEventListener('click', function() {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <link href="assets/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-    <script src="modal-handler.js"></script>
+        <script>
+                function printReceipt() {
+                    const data = {
+                        account_number: document.getElementById('account').value,
+                        name: document.getElementById('name').value,
+                        area: document.getElementById('area').value,
+                        category: document.getElementById('category').value,
+                        month_year: document.getElementById('month').value, // Adjust as necessary
+                        period: '', // Define how to get this value
+                        due_date: document.getElementById('dueDate').value,
+                        disconnection_date: '', // Define how to get this value
+                        present_reading: document.getElementById('presentReading').value,
+                        previous_reading: document.getElementById('previousReading').value,
+                        cum_consumed: document.getElementById('consumed').value,
+                        previous_bill: '', // Define how to get this value
+                        senior_discount: document.getElementById('scDiscount').value,
+                        less_x_disc: '', // Define how to get this value
+                        free_of_charge: document.getElementById('freeCharge').value,
+                        total_amount: document.getElementById('amount').value,
+                        penalty: '' // Define how to get this value
+                    };
+
+                    fetch('admin/receipt.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        // Handle the response from receipt.php if needed
+                        console.log(data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                }
+            </script>
+</body>
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        // Handle the response from receipt.php if needed
+                        console.log(data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                }
+            </script>
 </body>
 
 </html>
