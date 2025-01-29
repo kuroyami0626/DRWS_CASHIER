@@ -9,6 +9,8 @@
       <span class="d-none d-lg-block">D</span>
         
         <span class="d-none d-lg-block">RWSA</span>
+        <small>|</small>
+        <small>&nbsp;Cashier</small>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->

@@ -9,7 +9,7 @@
       </a>
     </li><!-- End Dashboard Nav -->
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" href="#">
         <i class="bi bi-recycle"></i>
         <span>Asset Disposal</span>
@@ -50,32 +50,32 @@
           </a>
         </li>
       </ul>
-    </li><!-- End Materials Inventory Nav -->
+    </li>End Materials Inventory Nav -->
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" href="#">
         <i class="bi bi-bar-chart"></i>
         <span>Pump and Well Data</span>
       </a>
-    </li>
+    </li> -->
 
 
-
+<!-- 
     <li class="nav-item">
       <a class="nav-link collapsed" href="maintenance_reports.php">
         <i class="bi bi-gear-wide-connected"></i>
         <span>Maintenance Reports</span>
       </a>
-    </li>
+    </li> -->
 
 
-
+<!-- 
     <li class="nav-item">
       <a class="nav-link collapsed" href="inventory_reports.php">
         <i class="bi bi-file-earmark-spreadsheet"></i>
         <span>Inventory Reports</span>
       </a>
-    </li>
+    </li> -->
 
   </ul>
 </aside>
