@@ -104,15 +104,6 @@
             width: 100%;
         }
 
-        .row-2 label {
-            margin-right: 0px;
-        }
-
-        .row-4 {
-            display: flex;
-            gap: 0px;
-            align-items: center;
-        }
 
 
         button {
@@ -140,6 +131,8 @@
 
         .card-body {
             padding: 20px;
+            overflow-y: auto; /* Add vertical scroll bar */
+            max-height: 400px; /* Set max height for the table container */
         }
 
         .card-title {
@@ -177,7 +170,7 @@
     </div>
     <div class="row">
         <!-- First Column -->
-        <div class="column">
+        
             <div class="row-2">
                 
             </div>
@@ -296,12 +289,36 @@
             <div class="row-2">
                 <div class="form-group">
                     <label for="famMem" class="form-label">FAMILY MEMBERS:</label>
-                    <input type="text" id="famMem1" class="form-input" placeholder="Enter your family members"><br>
-                    <input type="text" id="famMem2" class="form-input" placeholder="Enter your family members"><br>
-                    <input type="text" id="famMem3" class="form-input" placeholder="Enter your family members"><br>
+                    <input type="text" id="famMem1" class="form-input" placeholder="Enter your family members">
                 </div>
             </div>
-
+            <div class="row-2" id="family-members-container">
+                <div class="form-group">
+                    <label for="addFam" class="form-label"></label>
+                    <button class="btn btn-primary" id="add-btn" style="width:250px; margin-bottom: 10px;">Add Family Member</button>
+                </div>
+            </div>
+            <script>
+                document.getElementById('add-btn').addEventListener('click', function() {
+                    const famMemContainer = document.getElementById('family-members-container');
+                    const existingInputs = famMemContainer.querySelectorAll('input[type="text"]');
+                    
+                    if (existingInputs.length < 3) {
+                        const newDiv = document.createElement('div');
+                        newDiv.className = 'form-group';
+                        
+                        const newInput = document.createElement('input');
+                        newInput.type = 'text';
+                        newInput.className = 'form-input';
+                        newInput.placeholder = 'Enter your family members';
+                        
+                        newDiv.appendChild(newInput);
+                        famMemContainer.insertBefore(newDiv, famMemContainer.lastElementChild);
+                    } else {
+                        alert('Maximum of 3 family members can be added.');
+                    }
+                });
+            </script>
             <!-- Twelfth Row -->
             <div class="row-2">
                 <div class="form-group">
@@ -400,12 +417,13 @@
                 <button class="btn btn-danger" id="delete-btn">Delete</button>
                 <button class="btn btn-success" id="print-btn">Print</button>
             </div>
-        </div>
+       
+        
     
 
-    <div class="column-right">
+    <!-- <div class="column-right"> -->
         <!-- Top part for the table -->
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-body">
                 <table class="table table-bordered datatable" id="myTable">
                     <thead>
@@ -417,6 +435,17 @@
                             <th scope="col">Status</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Contact</th>
+                            <th scope="col">Birthplace</th>
+                            <th scope="col">Education Attainment</th>
+                            <th scope="col">Family Members</th>
+                            <th scope="col">Income</th>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Clearance</th>
+                            <th scope="col">Meter Number</th>
+                            <th scope="col">Date Filed</th>
+                            <th scope="col">Birthday</th>
+                            <th scope="col">Month</th>
+                            <th scope="col">Beneficiaries</th>
                         </tr>
                     </thead>
                     <tbody id="table-body">
@@ -428,14 +457,25 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> -->
 
         <!-- Bottom part for the input fields -->
-                <div class="section">
+                <!-- <div class="section">
             <div class="row-4">
                 <div class="form-group">
                     <label for="area" class="form-label">AREA:</label>
@@ -462,6 +502,8 @@
             </div>
         </div>
     </div>
+    </div> -->
+    
     </div>
     </div>
     <!-- Bootstrap JS and Popper.js -->
