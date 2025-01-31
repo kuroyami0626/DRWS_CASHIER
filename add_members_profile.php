@@ -1,8 +1,7 @@
 <?php
-
+include("header.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
     $account_number = $_POST['account_number'];
     $name = $_POST['name'];
     $area = $_POST['area'];
@@ -28,35 +27,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $beneficiary_2 = $_POST['beneficiary_2'];
     $beneficiary_3 = $_POST['beneficiary_3'];
 
-    // SQL Insert Query
+    // Prepare SQL statement
     $query = "INSERT INTO tbl_members_profile (
                 account_number, name, area, block, age, status, gender, contact, birthplace, 
                 education_attainment, family_member_1, family_member_2, family_member_3, 
                 income, cedula, clearance, meter_number, date_filed, birthday, 
                 amount, month, beneficiary_1, beneficiary_2, beneficiary_3
-              ) VALUES (
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-              )";
+            ) VALUES (
+                '$account_number', '$name', '$area', '$block', '$age', '$status', '$gender', 
+                '$contact', '$birthplace', '$education_attainment', '$family_member_1', 
+                '$family_member_2', '$family_member_3', '$income', '$cedula', '$clearance', 
+                '$meter_number', '$date_filed', '$birthday', '$amount', '$month', 
+                '$beneficiary_1', '$beneficiary_2', '$beneficiary_3'
+            )";
 
-    // Prepare statement
-    $stmt = $con->prepare($query);
-    $stmt->bind_param(
-        "isssissssssssdsssssdssss", 
-        $account_number, $name, $area, $block, $age, $status, $gender, $contact, $birthplace,
-        $education_attainment, $family_member_1, $family_member_2, $family_member_3, $income, 
-        $cedula, $clearance, $meter_number, $date_filed, $birthday, $amount, $month, 
-        $beneficiary_1, $beneficiary_2, $beneficiary_3
-    );
-
-    // Execute the query
-    if ($stmt->execute()) {
-        echo "New record created successfully!";
+    if ($con->query($query) === TRUE) {
+        echo "New record created successfully";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $query . "<br>" . $con->error;
     }
 
-    // Close statement and connection
-    $stmt->close();
     $con->close();
 }
 ?>
+
+<body>
+

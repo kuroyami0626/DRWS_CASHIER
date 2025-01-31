@@ -228,7 +228,7 @@
                 <label for="famMem3" class="form-label" style="display: none;">FAMILY MEMBER 3:</label>
                 <input type="text" id="famMem3" class="form-input" placeholder="Enter your family member" style="display: none;">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="famMem4" class="form-label" style="display: none;">FAMILY MEMBER 4:</label>
                 <input type="text" id="famMem4" class="form-input" placeholder="Enter your family member" style="display: none;">
             </div>
@@ -256,11 +256,11 @@
             <div class="form-group">
                 <label for="famMem10" class="form-label" style="display: none;">FAMILY MEMBER 10:</label>
                 <input type="text" id="famMem10" class="form-input" placeholder="Enter your family member" style="display: none; ">
-                
-            </div>
-                    <button class="btn btn-primary" id="add-btn" >Add Family Member</button>
-                    <button class="btn btn-danger" id="delete-btn" >Delete Family Member</button>
-            
+               
+            </div> -->
+                    <!-- <button class="btn btn-primary" id="add-btn" >Add Family Member</button>
+                    <button class="btn btn-danger" id="delete-btn" >Delete Family Member</button> -->
+           
         </div>
  
         <!-- Second Column -->
@@ -297,12 +297,19 @@
                 <label for="month" class="form-label">MONTH:</label>
                 <select name="month" id="month" class="form-control">
                     <option value="" disabled selected>Choose a month</option>
-                    <?php
-                    $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-                    foreach ($months as $month) {
-                        echo '<option value="' . $month . '">' . $month . '</option>';
-                    }
-                    ?>
+                    <option value="january">january</option>
+                    <option value="february">february</option>
+                    <option value="march">march</option>
+                    <option value="april">april</option>
+                    <option value="may">may</option>
+                    <option value="june">june</option>
+                    <option value="july">july</option>
+                    <option value="august">august</option>
+                    <option value="september">september</option>
+                    <option value="october">october</option>
+                    <option value="november">november</option>
+                    <option value="december">december</option>
+
                 </select>
             </div>
             <div class="form-group">
