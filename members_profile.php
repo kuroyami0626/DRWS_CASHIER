@@ -104,15 +104,6 @@
             width: 100%;
         }
 
-        .row-2 label {
-            margin-right: 0px;
-        }
-
-        .row-4 {
-            display: flex;
-            gap: 0px;
-            align-items: center;
-        }
 
 
         button {
@@ -179,7 +170,7 @@
     </div>
     <div class="row">
         <!-- First Column -->
-        <div class="column">
+        
             <div class="row-2">
                 
             </div>
@@ -427,12 +418,18 @@
                 <button class="btn btn-danger" id="delete-btn">Delete</button>
                 <button class="btn btn-success" id="print-btn">Print</button>
             </div>
-        </div>
+       
         
     
 
+<<<<<<< HEAD
     <!-- <div class="column-right">
         <div class="card">
+=======
+    <!-- <div class="column-right"> -->
+        <!-- Top part for the table -->
+        <!-- <div class="card">
+>>>>>>> 6b93726a1ec8ff669fb5f9fdbd6525bebe62f479
             <div class="card-body">
                 <table class="table table-bordered datatable" id="myTable">
                     <thead>
@@ -481,10 +478,15 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> -->
 
+<<<<<<< HEAD
         
                 <div class="section">
+=======
+        <!-- Bottom part for the input fields -->
+                <!-- <div class="section">
+>>>>>>> 6b93726a1ec8ff669fb5f9fdbd6525bebe62f479
             <div class="row-4">
                 <div class="form-group">
                     <label for="area" class="form-label">AREA:</label>
@@ -506,11 +508,17 @@
                 </div>
             </div>
             <div class="row-5">
-                <button class="btn btn-primary" id="right-btn">Submit</button>
+                <br>
+                <button class="btn btn-primary" id="right-btn" style="float:right;">Submit</button>
             </div>
         </div>
+<<<<<<< HEAD
     </div> -->
     </div>
+=======
+    </div>
+    </div> -->
+>>>>>>> 6b93726a1ec8ff669fb5f9fdbd6525bebe62f479
     
     </div>
     </div>
