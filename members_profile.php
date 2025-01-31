@@ -174,7 +174,7 @@
             </div>
             <div class="form-group">
                 <label for="block" class="form-label">BLOCK:</label>
-                <input type="text" id="block" class="form-input" placeholder="Enter the block">
+                <input type="text" id="block" name="block" class="form-input" placeholder="Enter the block">
             </div>
             <div class="form-group">
                 <label for="age" class="form-label">AGE:</label>
