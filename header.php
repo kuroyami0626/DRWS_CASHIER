@@ -37,4 +37,3 @@
 
 
 </head>
-<script src="//code.tidio.co/qql8mc6b8vvrmxbqws18ckf9a2yvma7m.js" async></script>

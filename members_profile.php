@@ -457,7 +457,8 @@
                 </div>
             </div>
             <div class="row-5">
-                <button class="btn btn-primary" id="right-btn">Submit</button>
+                <br>
+                <button class="btn btn-primary" id="right-btn" style="float:right;">Submit</button>
             </div>
         </div>
     </div>
