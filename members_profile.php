@@ -24,7 +24,7 @@
 
         .row {
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 100% 0%;
             height: 100vh;
             margin: 0;
             padding: 20px;
@@ -56,7 +56,7 @@
 
         .column-right {
             display: grid;
-            grid-template-rows: 80% 20%;
+            grid-template-rows: 100% 00%;
             gap: 20px;
         }
 
@@ -180,14 +180,15 @@
                     <label for="account" class="form-label">ACCOUNT NUMBER:</label>
                     <input type="number" id="account" class="form-input" placeholder="Account number">
                 </div>
-            </div>
-
-            <!-- Second Row with two inputs -->
-            <div class="row-2">
                 <div class="form-group">
                     <label for="name" class="form-label">NAME:</label>
                     <input type="text" id="name" class="form-input" placeholder="Enter your name">
                 </div>
+            </div>
+
+            <!-- Second Row with two inputs -->
+            <div class="row-2">
+                
             </div>
 
             <!-- Third Row with two inputs -->
@@ -238,7 +239,7 @@
                         <option value="single">SINGLE</option>
                         <option value="married">MARRIED</option>
                         <option value="widowed">WIDOWED</option>
-                        <option value="divorced">DIVORCED</option>
+                        <option value="divorced">SEPARATED</option>
                     </select>
                 </div>
             </div>
@@ -421,9 +422,14 @@
         
     
 
+<<<<<<< HEAD
+    <!-- <div class="column-right">
+        <div class="card">
+=======
     <!-- <div class="column-right"> -->
         <!-- Top part for the table -->
         <!-- <div class="card">
+>>>>>>> 6b93726a1ec8ff669fb5f9fdbd6525bebe62f479
             <div class="card-body">
                 <table class="table table-bordered datatable" id="myTable">
                     <thead>
@@ -474,8 +480,13 @@
             </div>
         </div> -->
 
+<<<<<<< HEAD
+        
+                <div class="section">
+=======
         <!-- Bottom part for the input fields -->
                 <!-- <div class="section">
+>>>>>>> 6b93726a1ec8ff669fb5f9fdbd6525bebe62f479
             <div class="row-4">
                 <div class="form-group">
                     <label for="area" class="form-label">AREA:</label>
@@ -501,8 +512,13 @@
                 <button class="btn btn-primary" id="right-btn" style="float:right;">Submit</button>
             </div>
         </div>
+<<<<<<< HEAD
+    </div> -->
+    </div>
+=======
     </div>
     </div> -->
+>>>>>>> 6b93726a1ec8ff669fb5f9fdbd6525bebe62f479
     
     </div>
     </div>
