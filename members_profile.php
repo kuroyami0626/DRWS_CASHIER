@@ -24,7 +24,7 @@
 
         .row {
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 100% 0%;
             height: 100vh;
             margin: 0;
             padding: 20px;
@@ -56,7 +56,7 @@
 
         .column-right {
             display: grid;
-            grid-template-rows: 80% 20%;
+            grid-template-rows: 100% 00%;
             gap: 20px;
         }
 
@@ -189,14 +189,15 @@
                     <label for="account" class="form-label">ACCOUNT NUMBER:</label>
                     <input type="number" id="account" class="form-input" placeholder="Account number">
                 </div>
-            </div>
-
-            <!-- Second Row with two inputs -->
-            <div class="row-2">
                 <div class="form-group">
                     <label for="name" class="form-label">NAME:</label>
                     <input type="text" id="name" class="form-input" placeholder="Enter your name">
                 </div>
+            </div>
+
+            <!-- Second Row with two inputs -->
+            <div class="row-2">
+                
             </div>
 
             <!-- Third Row with two inputs -->
@@ -247,7 +248,7 @@
                         <option value="single">SINGLE</option>
                         <option value="married">MARRIED</option>
                         <option value="widowed">WIDOWED</option>
-                        <option value="divorced">DIVORCED</option>
+                        <option value="divorced">SEPARATED</option>
                     </select>
                 </div>
             </div>
@@ -430,8 +431,7 @@
         
     
 
-    <div class="column-right">
-        <!-- Top part for the table -->
+    <!-- <div class="column-right">
         <div class="card">
             <div class="card-body">
                 <table class="table table-bordered datatable" id="myTable">
@@ -483,7 +483,7 @@
             </div>
         </div>
 
-        <!-- Bottom part for the input fields -->
+        
                 <div class="section">
             <div class="row-4">
                 <div class="form-group">
@@ -509,7 +509,7 @@
                 <button class="btn btn-primary" id="right-btn">Submit</button>
             </div>
         </div>
-    </div>
+    </div> -->
     </div>
     
     </div>
