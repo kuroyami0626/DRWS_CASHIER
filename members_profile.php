@@ -1,3 +1,4 @@
+<?php include("header.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
  
@@ -143,17 +144,18 @@
     <div class="row">
         <!-- First Column -->
         <div class="column">
+    <form action="add_members_profile.php" method="POST" >
             <div class="form-group">
-                <label for="account" class="form-label">ACCOUNT NUMBER:</label>
-                <input type="number" id="account" class="form-input" placeholder="Account number">
+                <label for="account_number" class="form-label">ACCOUNT NUMBER:</label>
+                <input type="number" id="account_number" name="account_number" class="form-input" placeholder="Account number">
             </div>
             <div class="form-group">
                 <label for="name" class="form-label">NAME:</label>
-                <input type="text" id="name" class="form-input" placeholder="Enter your name">
+                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name">
             </div>
             <div class="form-group">
                 <label for="area" class="form-label">AREA:</label>
-                <select name="area" id="area" class="form-control">
+                <select  id="area" name="area" class="form-control">
                     <option value="">SELECT STATUS</option>
                     <option value="silangan">SILANGAN</option>
                     <option value="kanluran">KANLURAN</option>
@@ -323,6 +325,7 @@
                 <button class="btn btn-success" id="print-btn">Print</button>
             </div>
         </div>
+    </form>
     </div>
     <!-- Bootstrap JS and Popper.js -->
     <script src="assets/js/main.js"></script>
@@ -352,7 +355,7 @@
             alert('Maximum of 10 family members can be added.');
             }
         });
-
+ 
         document.getElementById('delete-btn').addEventListener('click', function() {
             if (famMemCount > 1) {
             const famMemInput = document.getElementById('famMem' + famMemCount);

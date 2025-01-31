@@ -25,15 +25,4 @@
 
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- js -->
-<script src="js\bootstrap.min.js"></script>
-<script src="js\click-scroll.js"></script>
-<script src="js\custom.js"></script>
-<script src="js\jquery.magnific-popup.min.js"></script>
-<script src="js\jquery.min.js"></script>
-<script src="js\jquery.sticky.js"></script>
-<script src="js\magnific-popup-options.js"></script>
-
-
 </head>

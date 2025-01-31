@@ -9,14 +9,14 @@
       </a>
     </li><!-- End Dashboard Nav -->
 
-    <!-- <li class="nav-item">
-      <a class="nav-link collapsed" href="#">
+     <li class="nav-item">
+      <a class="nav-link collapsed" href="members_profile_reports.php">
         <i class="bi bi-recycle"></i>
-        <span>Asset Disposal</span>
+        <span>Members Profile</span>
       </a>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" href="#">
         <i class="bi bi-person"></i>
         <span>Daily Transaction</span>
@@ -50,7 +50,7 @@
           </a>
         </li>
       </ul>
-    </li>End Materials Inventory Nav -->
+    </li>End Materials Inventory Nav  -->
 
     <!-- <li class="nav-item">
       <a class="nav-link collapsed" href="#">
