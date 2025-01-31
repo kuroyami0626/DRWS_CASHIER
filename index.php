@@ -112,7 +112,7 @@ include("header.php");
             <button class="btn btn-primary" onclick="window.location.href='summary-of-reading.html'">SUMMARY OF READING</button>
             <button class="btn btn-primary" onclick="window.location.href='account.php'">ACCOUNT</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#readingEntryModal">READING</button>
-            <button class="btn btn-primary" onclick="window.location.href='members-profile.html'">MEMBER'S PROFILE</button>
+            <button class="btn btn-primary" onclick="window.location.href='members_profile.php'">MEMBER'S PROFILE</button>
             <button class="btn btn-primary" onclick="window.location.href='official-receipt.html'">OFFICIAL RECEIPT</button>
             <button class="btn btn-danger" onclick="window.location.href='daily-collection-report.html'">DAILY COLLECTION REPORT</button>
         </div>
@@ -278,20 +278,14 @@ include("header.php");
 
                             <div class="form-group">
                                 <label for="month" class="form-label">MONTH:</label>
-                                <select name="month" id="month" class="form-control">
-                                    <option value=""></option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
+                               <select name="month" id="month" class="form-control">
+                                    <option value="" disabled selected>Choose a month</option>
+                                    <?php
+                                    $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                                    foreach ($months as $month) {
+                                        echo '<option value="' . $month . '">' . $month . '</option>';
+                                    }
+                                    ?>
                                 </select>
                             </div>
 
